@@ -64,11 +64,6 @@ def count_kinda_safe_reports(reports):
         safe_or_not.append(kinda_safe)
     return sum(safe_or_not)
 
-    with open(file_name, 'w') as file:
-        for report in reports:
-            if not is_strictly_safe(report):
-                file.write(str(report) + '  ' + str(check_sorted(report)) + '  ' + str(check_difference(report)) +  '  ' + str(check_almost_sorted(report)) + '  ' + str(check_almost_safe_differences(report)) +'\n')
-
 def brute_force(reports):
     kinda_safe = 0
     for report in reports:
