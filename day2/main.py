@@ -14,8 +14,7 @@ def is_strictly_safe(report):
     return check_difference(report) and check_sorted(report)
 
 def count_safe_reports(reports):
-    safe_or_not = [is_strictly_safe(report) for report in reports]
-    return sum(safe_or_not)
+    return sum([is_strictly_safe(report) for report in reports])
        
 print(count_safe_reports(reports))
 
@@ -58,11 +57,7 @@ def check_almost_safe_differences(report):
     return False
 
 def count_kinda_safe_reports(reports):
-    safe_or_not = []
-    for report in reports:
-        kinda_safe = check_almost_sorted(report) or check_almost_safe_differences(report)
-        safe_or_not.append(kinda_safe)
-    return sum(safe_or_not)
+    return sum([check_almost_sorted(report) or check_almost_safe_differences(report) for report in reports])
 
 
 ########### Naive solution ##################
