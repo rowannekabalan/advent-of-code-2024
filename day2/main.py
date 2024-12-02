@@ -64,6 +64,9 @@ def count_kinda_safe_reports(reports):
         safe_or_not.append(kinda_safe)
     return sum(safe_or_not)
 
+
+########### Naive solution ##################
+
 def brute_force(reports):
     kinda_safe = 0
     for report in reports:
