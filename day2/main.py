@@ -27,9 +27,7 @@ def check_almost_sorted(report):
             if report[i] != sorted_report[i]:
                 report_no_x = report.copy()
                 report_no_x.pop(i)
-                report_no_y = report.copy()
-                report_no_y.pop(i)
-                if is_strictly_safe(report_no_x) or is_strictly_safe(report_no_y):
+                if is_strictly_safe(report_no_x):
                     return True
         return False
 
