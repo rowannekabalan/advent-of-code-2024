@@ -10,7 +10,7 @@ import (
 	"math"
 )
 
-func read_input() ([]int, []int){
+func readInput() ([]int, []int){
 	var list1, list2 []int
 
 	file, err := os.Open("./inputs/input1.txt")
@@ -39,7 +39,7 @@ func read_input() ([]int, []int){
 	return list1, list2
 }
 
-func calculate_distance(list1 []int, list2 []int) int {
+func calculateDistance(list1 []int, list2 []int) int {
 	sort.Ints(list1)
 	sort.Ints(list2)
 
@@ -50,7 +50,7 @@ func calculate_distance(list1 []int, list2 []int) int {
 	return sum
 }
 
-func calculate_similarity(list1 []int, list2 []int) int {
+func calculateSimilarity(list1 []int, list2 []int) int {
 	similarity := 0
 	counts := make(map[int]int)
 
@@ -64,9 +64,9 @@ func calculate_similarity(list1 []int, list2 []int) int {
 	return similarity
 }
 func main() {
-	list1, list2 := read_input()
+	list1, list2 := readInput()
 	//list3 := []int{3, 4, 2, 1, 3, 3}
 	//list4 := []int{4, 3, 5, 3, 9, 3}
-	fmt.Println(calculate_distance(list1,list2))
-	fmt.Println(calculate_similarity(list1,list2))
+	fmt.Println(calculateDistance(list1,list2))
+	fmt.Println(calculateSimilarity(list1,list2))
 }
